@@ -52,7 +52,8 @@ jobs:
         password: qwerty123@@
 
     - name: Docker Scout scan
-      run: |
-        curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
-        docker scout quickview myapp:latest
-        docker scout cves myapp:latest
+      uses: docker/scout-action@v1.0.9
+      with:
+        dockerhub-user: suarim
+        dockerhub-password: qwerty123@@
+        command: quickview,cves
